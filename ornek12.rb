@@ -1,7 +1,6 @@
 sayilar = [5,1,6,2,4,3,9,3,7]
 
 # # Bubble Sort
-# degisim_adedi = 1
 # degisim = true
 
 # while degisim
