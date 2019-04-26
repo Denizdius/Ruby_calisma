@@ -1,7 +1,7 @@
 puts "sayı gir asal olup olmadığına karar vereceğim"
 n = gets.to_i
 asal = true
-(2..n/2).to_a.each do |sayi|
+(2..Math.sqrt(n).floor).to_a.each do |sayi|
     if n % sayi == 0
         asal=false
     end
