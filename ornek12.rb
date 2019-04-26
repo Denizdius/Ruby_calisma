@@ -6,17 +6,17 @@ sayilar = [5,1,6,2,4,3,9,3,7]
 # while degisim
 #   degisim = false
 #   sayac = 0
-#   while sayac < sayilar.length - 1
-#     if sayilar[sayac] > sayilar[sayac+1]
-#       sayilar[sayac], sayilar[sayac+1] = sayilar[sayac+1], sayilar[sayac]
-#       # temp = sayilar[sayac]
-#       # sayilar[sayac] = sayilar[sayac+1]
-#       # sayilar[sayac+1] = temp
-#       degisim = true
-#       pp sayilar      
-#     end
-#     sayac += 1
-#   end
+  while sayac < sayilar.length - 1
+    if sayilar[sayac] > sayilar[sayac+1]
+      sayilar[sayac], sayilar[sayac+1] = sayilar[sayac+1], sayilar[sayac]
+      # temp = sayilar[sayac]
+      # sayilar[sayac] = sayilar[sayac+1]
+      # sayilar[sayac+1] = temp
+      # degisim = true
+      # pp sayilar      
+    end
+    sayac += 1
+  end
 # end
 
 sayac = 0
