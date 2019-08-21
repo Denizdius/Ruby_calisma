@@ -1,0 +1,2 @@
+* 1'den 100'e kadar olan sayıların toplamının karesi ile karelerinin toplamının farkını bulan program
+* 600851475143 sayısının en büyük asal bölenini bulma
