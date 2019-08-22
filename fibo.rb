@@ -6,7 +6,7 @@
 # 6) temp = sayi1
 # 7) sayi1 = sayi2
 # 8) sayi2 += temp
-# 9) sayi2yi ekrana yazdır
+# 9) sayi2/2 sonucunda 2 ye bölünürse yazdır bölünmezse yazdırma
 # 10) 5. adıma git
 # 11) Bitir
 
@@ -18,9 +18,8 @@ until sayi2 + sayi1 > 4_000_000
     temp = sayi1
     sayi1 = sayi2
     sayi2 += temp
-    print "#{sayi2}, " 
-end
-
-puts
-    
-
+    if  "#{sayi2}/2" == true
+         print "#{sayi2}, " 
+    end
+         
+^#yazmıyor
