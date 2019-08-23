@@ -18,8 +18,5 @@ until sayi2 + sayi1 > 4_000_000
     temp = sayi1
     sayi1 = sayi2
     sayi2 += temp
-    if  "#{sayi2}/2" == true
-         print "#{sayi2}, " 
-    end
-         
-^#yazmıyor
+    print "#{sayi2}, " if  sayi2 % 2 == 0
+end

@@ -1,3 +1,4 @@
 * 1'den 100'e kadar olan sayıların toplamının karesi ile karelerinin toplamının farkını bulan program
-* 600851475143 sayısının en büyük asal bölenini bulma(internette araştırmalarım sonuc normal bir yolla yapılınca bilgisayarın ram nin yetmediğini okudum.)
-sayı çok ilgimi çekmişti
+* 600851475143 sayısının en büyük asal bölenini bulma
+  (internette araştırmalarım sonuc normal bir yolla yapılınca bilgisayarın ram nin yetmediğini okudum.)
+   sayı çok ilgimi çekmişti
