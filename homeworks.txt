@@ -1,4 +1,5 @@
-* 1'den 100'e kadar olan sayıların toplamının karesi ile karelerinin toplamının farkını bulan program
-* 600851475143 sayısının en büyük asal bölenini bulma
-  (internette araştırmalarım sonuc normal bir yolla yapılınca bilgisayarın ram nin yetmediğini okudum.)
-   sayı çok ilgimi çekmişti
+* 10_001. asal sayıyı bulan program
+* Toplamları 1000 olan pisagor üçlüsü (Sadece bir tane olası cevap var)
+   a + b + c = 1000
+   a*a + b*b = c*c
+* 2 milyondan küçük olan asal sayıların toplamı
