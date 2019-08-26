@@ -1,5 +1,5 @@
-* 10_001. asal sayıyı bulan program
-* Toplamları 1000 olan pisagor üçlüsü (Sadece bir tane olası cevap var)
+* 10_001. asal sayıyı bulan program check
+* Toplamları 1000 olan pisagor üçlüsü (Sadece bir tane olası cevap var) check
    a + b + c = 1000
    a*a + b*b = c*c
 * 2 milyondan küçük olan asal sayıların toplamı
