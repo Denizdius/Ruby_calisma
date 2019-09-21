@@ -1,14 +1,11 @@
-def SimpleAdding(num)
+def simpleAdding(num)
     i = 1
     toplam = 0
     (1..num).each do |i|
         toplam += i
     end
-    
-     pp toplam
-    return num
+
+    num
 end
 
-         
-# keep this function call here    
-#puts SimpleAdding def SimpleAdding
+puts simpleAdding(gets.to_i)

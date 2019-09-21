@@ -1,14 +1,5 @@
-def Harfler_sıralaması(str)
-
-  str_arr = str.split(" ")
-  (0..str_arr.length-1).each do |x|
-      str_arr[x] = str_arr[bum].split("").sort.join("")
-    end
-  
-  return str_arr.join(" ")
-         
+def harfler_siralamasi(str)
+  str_arr = str.split("").sort.join
 end
-         
-   
-   
-puts Harfler_sıralamasıs(STDIN.gets)  
+            
+puts harfler_siralamasi(gets)  

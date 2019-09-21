@@ -1,2 +1,27 @@
-* 2 milyondan küçük olan asal sayıların toplamı
-* n! sonucunun rakamları toplamını bulan fonksiyon
+Başvuru Uygulaması
+0. İsminiz
+1. Yaşınız
+    Koşul: Yaş <= 40
+2. Seyahat Engeli (E|H)
+    Koşul: E
+3. Sabıka Kaydı
+    Koşul: H
+4. Programlama Bilgisi
+    Diller: == Ruby, Python, C, Java (Bu dillerden en az ikisini bilmesi gerekiyor)
+5. Tecrübe
+    Koşul: >= 3 yıl
+
+# Bilgi girişi sürekli olacak (Aday girişi yapılacak mı? diye sorulacak E/H)
+# Girilen bilgiler bir Hash içerisine alınacak
+# Her adımda kullanıcının girişi kontrol edilmeli
+
+
+
+============ ELEMESOFT ===============
+|       1. Aday Bilgi Girişi         |
+|       2. Aday İstatistikleri       |
+|       3. Eleme                     |
+|       4. Çıkış                     |
+======================================
+
+Seçiminiz: 1

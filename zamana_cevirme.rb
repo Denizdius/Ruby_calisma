@@ -1,11 +1,9 @@
 def TimeConvert(num)
-
   saat = num / 60
   dakika = num % 60
 
-    saat.to_s + ':' + dakika.to_s
-         
+  "#{saat}:#{dakika}"
 end
 
-puts TimeConvert(STDIN.gets)
+puts TimeConvert(gets.to_i)
   
