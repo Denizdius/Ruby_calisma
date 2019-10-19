@@ -1,3 +1,6 @@
+require 'io/console'
+MENU_FILL_LENGTH = 50
+
 MENU_TEXTS = [
   [],
   ["", "İsim: ", "Yaş", "Seyahat Engeli[E|H]"]
@@ -5,23 +8,74 @@ MENU_TEXTS = [
 
 def print_menu(level="0")
   clear_screen
-  levels = level.split("_")
-  case level[0]
+
+  levels = split_into_levels(level)
+  
+  
+  case level[0]  
+  #when "0"
+    # puts show_level_menu("0")
   when "0"
-    puts "============ ELEMESOFT ==============="
-    puts "|       1. Aday Bilgi Girişi         |"
-    puts "|       2. Aday İstatistikleri       |"
-    puts "|       3. Eleme                     |"
-    puts "|       4. Çıkış                     |"
-    puts "======================================"
+    puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
+    puts_at_center(text: 'DENİZSOFT ELEMATİK')
+    puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
+    puts_at_center(text: "1. Aday Bilgi Girişi")
+    puts_at_center(text: "2. Aday rişi")
+    puts_at_center(text: "3. Aday şi")
+    puts_at_center(text: "4. ABilgi Girişi")
+    puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
   when "1"
     puts "========== ADAY BİLGİ GİRİŞİ ========"
     puts "_____________________________________"
   end
 end
 
+def split_into_levels(level)
+  level.split("_")
+end
+
+def show_level_menu(level)
+  menu_literals = [
+    "DENİZ SOFT ELEMATİK",
+    "ADAY BİLGİ GİRİŞİ EKRANI",
+    "ADAY İSTATİSTİKLERİ",
+    "ELEME",
+    "ÇIKIŞ"
+  ]
+
+  header = menu_literals[level]
+  puts_at_center("-" * 50)
+end
+
+
+def puts_at_center(text: , use_pipe: true)
+  # Paralel atama
+  height_of_terminal, width_of_terminal = IO.console.winsize
+  
+  horizontal_space_count = (width_of_terminal - MENU_FILL_LENGTH) / 2
+  
+  printing_text  = ' ' * horizontal_space_count
+  if use_pipe
+      printing_text += '|'
+      padding_size = 1
+      printing_text += ' ' * (((MENU_FILL_LENGTH - text.size) /2) - padding_size)
+      printing_text += text
+      
+      padding_size = ((MENU_FILL_LENGTH - text.size).odd?) ? 1 : 2
+      printing_text += ' ' * (((MENU_FILL_LENGTH - text.size) /2) - padding_size)
+      printing_text += ' |'
+  else
+      printing_text += text
+  end
+
+  puts printing_text
+end
+
+
+
 def take_answer(message, answer_type="string")
-    print message
+    puts_at_center(text: message)
+    puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
     returning_value = gets.chomp
     case answer_type
     when "bool"
