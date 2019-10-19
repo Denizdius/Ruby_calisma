@@ -1,6 +1,7 @@
 require 'io/console'
 MENU_FILL_LENGTH = 50
 
+
 MENU_TEXTS = [
   [],
   ["", "İsim: ", "Yaş", "Seyahat Engeli[E|H]"]
@@ -8,6 +9,11 @@ MENU_TEXTS = [
 
 def print_menu(level="0")
   clear_screen
+  menu_y_length = 10
+  y_space_count = (IO.console.winsize.first - menu_y_length ) / 2
+  print "\n" * y_space_count
+
+
 
   levels = split_into_levels(level)
   

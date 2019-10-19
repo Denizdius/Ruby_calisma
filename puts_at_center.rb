@@ -1,11 +1,13 @@
 require 'io/console'
 MENU_FILL_LENGTH = 50
+MENU_Y_LENGTH = 5
 
 def puts_at_center(text: , use_pipe: true)
     # Paralel atama
     height_of_terminal, width_of_terminal = IO.console.winsize
     
     horizontal_space_count = (width_of_terminal - MENU_FILL_LENGTH) / 2
+    y_space_count = (height_of_terminal - MENU_Y_LENGTH) / 2
     
     printing_text  = ' ' * horizontal_space_count
     if use_pipe
