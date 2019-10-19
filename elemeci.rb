@@ -12,28 +12,15 @@ def print_menu(level="0")
   menu_y_length = 10
   y_space_count = (IO.console.winsize.first - menu_y_length ) / 2
   print "\n" * y_space_count
-
-
-
   levels = split_into_levels(level)
   
+
+  puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
+  puts_at_center(text: 'DENİZSOFT ELEMATİK')
+  puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
   
-  case level[0]  
-  #when "0"
-    # puts show_level_menu("0")
-  when "0"
-    puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
-    puts_at_center(text: 'DENİZSOFT ELEMATİK')
-    puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
-    puts_at_center(text: "1. Aday Bilgi Girişi")
-    puts_at_center(text: "2. Aday rişi")
-    puts_at_center(text: "3. Aday şi")
-    puts_at_center(text: "4. ABilgi Girişi")
-    puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
-  when "1"
-    puts "========== ADAY BİLGİ GİRİŞİ ========"
-    puts "_____________________________________"
-  end
+  show_level_menu(level[0])
+  puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
 end
 
 def split_into_levels(level)
@@ -49,14 +36,20 @@ def show_level_menu(level)
     "ÇIKIŞ"
   ]
 
-  header = menu_literals[level]
-  puts_at_center("-" * 50)
+  case level
+  when "0"
+    max_length_of_text = menu_literals.map(&:size).max
+    menu_literals.each_with_index do |elem, index|
+      puts_at_center(text: "#{index+1}. #{elem}", const_of_space: max_length_of_text)
+    end
+  end
 end
 
 
-def puts_at_center(text: , use_pipe: true)
+def puts_at_center(text: , const_of_space: 0, use_pipe: true)
+  const_of_space = text.size if const_of_space.zero?
   # Paralel atama
-  height_of_terminal, width_of_terminal = IO.console.winsize
+  width_of_terminal = IO.console.winsize.last
   
   horizontal_space_count = (width_of_terminal - MENU_FILL_LENGTH) / 2
   
@@ -64,11 +57,11 @@ def puts_at_center(text: , use_pipe: true)
   if use_pipe
       printing_text += '|'
       padding_size = 1
-      printing_text += ' ' * (((MENU_FILL_LENGTH - text.size) /2) - padding_size)
+      printing_text += ' ' * (((const_of_space) /2) - padding_size)
       printing_text += text
       
-      padding_size = ((MENU_FILL_LENGTH - text.size).odd?) ? 1 : 2
-      printing_text += ' ' * (((MENU_FILL_LENGTH - text.size) /2) - padding_size)
+      padding_size = (((MENU_FILL_LENGTH - const_of_space - text.size)).odd?) ? 1 : 2
+      printing_text += ' ' * ((((MENU_FILL_LENGTH - const_of_space - text.size)) /2) - padding_size)
       printing_text += ' |'
   else
       printing_text += text
