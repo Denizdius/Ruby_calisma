@@ -16,10 +16,10 @@ def print_menu(level="0")
   
 
   puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
-  puts_at_center(text: 'DENİZSOFT ELEMATİK')
+  puts_at_center(text: 'DENİZSOFT ELEMATİK', justify_left: false)
   puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
   
-  show_level_menu(level[0])
+  show_level_menu(level[0]) if level == "0"
   puts_at_center(text: '-' * MENU_FILL_LENGTH, use_pipe: false)
 end
 
@@ -28,13 +28,12 @@ def split_into_levels(level)
 end
 
 def show_level_menu(level)
-  menu_literals = [
-    "DENİZ SOFT ELEMATİK",
-    "ADAY BİLGİ GİRİŞİ EKRANI",
-    "ADAY İSTATİSTİKLERİ",
-    "ELEME",
-    "ÇIKIŞ"
-  ]
+  menu_literals = ["ADAY BİLGİ GİRİŞİ EKRANI",
+            "ADAY İSTATİSTİKLERİ",
+            "ELEME",
+            "ÇIKIŞ"]
+  
+  
 
   case level
   when "0"
@@ -46,7 +45,7 @@ def show_level_menu(level)
 end
 
 
-def puts_at_center(text: , const_of_space: 0, use_pipe: true)
+def puts_at_center(text: , const_of_space: 0, use_pipe: true, justify_left: true)
   const_of_space = text.size if const_of_space.zero?
   # Paralel atama
   width_of_terminal = IO.console.winsize.last
@@ -55,14 +54,26 @@ def puts_at_center(text: , const_of_space: 0, use_pipe: true)
   
   printing_text  = ' ' * horizontal_space_count
   if use_pipe
-      printing_text += '|'
-      padding_size = 1
-      printing_text += ' ' * (((const_of_space) /2) - padding_size)
+    printing_text += '|'
+    padding_size = 1
+
+    if justify_left
+      left_space = ((MENU_FILL_LENGTH - const_of_space) / 2 - padding_size)
+
+      printing_text += ' ' *  left_space
       printing_text += text
+      right_space = MENU_FILL_LENGTH - left_space - text.size - 3
+      printing_text += ' ' * right_space
+    else
+      printing_text += ' ' * (((MENU_FILL_LENGTH - text.size) /2) - padding_size)
       
-      padding_size = (((MENU_FILL_LENGTH - const_of_space - text.size)).odd?) ? 1 : 2
-      printing_text += ' ' * ((((MENU_FILL_LENGTH - const_of_space - text.size)) /2) - padding_size)
-      printing_text += ' |'
+      printing_text += text
+
+      padding_size = ((MENU_FILL_LENGTH - text.size).odd?) ? 1 : 2
+      printing_text += ' ' * (((MENU_FILL_LENGTH - text.size) /2) - padding_size)
+      
+    end
+    printing_text += ' |'
   else
       printing_text += text
   end
@@ -78,6 +89,7 @@ def take_answer(message, answer_type="string")
     returning_value = gets.chomp
     case answer_type
     when "bool"
+      returning_value = returning_value.upcase
       if returning_value == 'E' || returning_value == 'H'
         return true
       else
@@ -120,7 +132,7 @@ end
 
 candidates = []
 
-while (true)
+
   print_menu
   cevap = take_answer("Seçiminiz: ", "int")
 
@@ -129,29 +141,30 @@ while (true)
 
     case cevap
     when 1
+      
+      
       candidate = {}
-      puts "Aday Bilgileri Girişi"
-      puts "---------------------"
-      
+      print_menu("1")
       candidate[:name] = take_answer("İsim: ")
+      print_menu("1")
       candidate[:age] = take_answer("Yaşınız: ", "int")
-      
+      print_menu("1")
       travel_restriction = take_answer(
         "Seyahat Engeli[E|H]: ", 
         "bool"
       )
       while (
-        answer_is_valid(travel_restriction, 
+        !answer_is_valid(travel_restriction, 
                         "logical", 
                         {error_message: "Yanlış tuşladınız. Lütfen E veya H tuşlayın.",
                          menu_level: "1_3"
                         })
         )
+        # print_menu("1")
         travel_restriction = take_answer("Seyahat Engeli[E|H]: ", "bool") 
       end
      
       candidate[:travel_restriction] = travel_restriction
-
 
       
     #   print "Sabıka Kaydı[E|H]: "
@@ -205,7 +218,9 @@ while (true)
     #   candidate[:money] = gets.to_i
 
 
-       
+    candidates << candidate 
+    pp candidate
+     
       
       
 
@@ -215,11 +230,10 @@ while (true)
 
 
     when 3 then puts "Eleme"
-      pp candidates
+      pp candidate
     else 
       puts "Programı kullanıdığınız için teşekkürler."
       exit(0)
     end
-  end
 end
 
