@@ -1,7 +1,8 @@
 class Vehicle
-    def initialize(wheels_count: 0, fuel: '')
+    def initialize(wheels_count: 0, fuel: '', seats_count:0)
         set_wheels(wheels_count)
         set_fuel(fuel)
+        set_seats(seats_count)
         # @engine = Engine.new(type: "unspecified")
     end
 
@@ -21,9 +22,16 @@ class Vehicle
         puts "---------------------------"
         puts "Wheels: #{wheels_count}"
         puts "Fuel: #{fuel}"
+        puts "Seats: #{seats_count}"
         puts "---------------------------"
     end
+    def has_seats?
+        !@seats.nil?
+    end
     
+    def seats_count
+        has_seats? ? @seats.count : 0
+    end
     private
 
     def set_wheels(count)
@@ -37,4 +45,13 @@ class Vehicle
     def set_fuel(type)
         @fuel = Fuel.new(type)
     end
+
+    def set_seats(count)
+        if count > 0
+            @seats = Seat.new(count: count)
+        else
+            @seats = nil
+        end
+    end
+
 end
