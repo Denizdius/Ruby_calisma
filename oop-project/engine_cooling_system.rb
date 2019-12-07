@@ -2,7 +2,7 @@
         attr_reader :type
     
         def initialize(engine_cooling_system_type = '')
-            if valid_fuel_type?(engine_cooling_system_type)
+            if valid_engine_cooling_system_type?(engine_cooling_system_type)
                 @type = engine_cooling_system_type.capitalize
             else
                 engine_cooling_system_type == '' ? @type = nil : (raise InvalidEnginecoolingsystemTypeError)
@@ -12,7 +12,7 @@
         private 
         
         def valid_engine_cooling_system_type?(type)
-            %w[air liquid ].include? type.downcase
+            %w[air liquid].include? type.downcase
         end
     end
     

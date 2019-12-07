@@ -11,7 +11,7 @@ class Wheel_drive
 
     private 
     
-    def valid_wheel_type?(type)
+    def valid_wheel_drive_type?(type)
         %w[4x2 awd rwd 4x4].include? type.downcase
     end
 end
