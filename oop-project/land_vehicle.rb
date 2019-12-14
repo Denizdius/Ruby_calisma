@@ -2,26 +2,23 @@ class LandVehicle < Vehicle
     @@count = 0
 
     def initialize(options = {})
-         @gear = Gear.new(options[:gear])
-         default = {
-            gear: ''
+        default = {
+            gear: 'automatic',
             side_mirors_count: 0
         }
+
+        options = default.merge(options)
         
+        @gear = Gear.new(options[:gear])
+        @side_mirors = Side_Mirors.new(count: options[:side_mirors_count])
     
         super(options)
-
-         set_gear(options[:gear])
-         set_side_mirors_count(option[:side_mirors_count))
-            @@count += 1
+        
+        @@count += 1
     end
 
     def has_side_mirors?
-        !@side_mirors.nil?
-    end
-    
-    def side_mirors_count
-        has_side_mirors? ? @side_mirors.count : 0
+        !@side_mirors.count.zero?
     end
 
     def gear
@@ -34,21 +31,9 @@ class LandVehicle < Vehicle
 
     def info
         super
-        puts "Ben bir kara aracıyım."
+        puts "Gear Type: #{@gear.type}"
+        puts "Side Mirrors: #{@side_mirors.count}"
+        puts "Vehicle Type: Land"
+        puts "---------------------------"
     end
 end
-
-private
-
-def set_side_mirors(count)
-    if count > 0
-        side_mirors = Side_Mirors.new(count: count)
-    else
-        @side_mirors = nil
-    end
-end
-
-def set_gear(type)
-    @gear = Gear.new(type)
-end
-

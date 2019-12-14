@@ -23,7 +23,9 @@ class SeaVehicle < Vehicle
 
     def info
         super
-        puts "Ben bir su aracıyım."
+        puts "Sail: #{@sail.existence}"
+        puts "Vehicle Type: Sea"
+        puts "---------------------------"
     end
 end
 

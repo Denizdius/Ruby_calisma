@@ -56,7 +56,7 @@ class Vehicle
         puts "Acs: #{acs_count}"
         puts "Wheel Drive System : #{wheel_drive}"
         puts "Engine Cooling System : #{engine_cooling_system}"
-        puts "---------------------------"
+        
     end
     def has_seats?
         !@seats.nil?
