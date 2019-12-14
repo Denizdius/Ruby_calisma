@@ -12,4 +12,6 @@ v3.info
 v4 = LandVehicle.new(wheels_count: 5)
 v4.info
 
+v5 = SeaVehicle.new(sail_count:3)
+v5.info
 puts "Total #{Vehicle.count} vehicles owned."

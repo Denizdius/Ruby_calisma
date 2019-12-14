@@ -1,5 +1,5 @@
 class LandVehicle < Vehicle
-    @@count = 0
+    
 
     def initialize(options = {})
         default = {
@@ -14,7 +14,7 @@ class LandVehicle < Vehicle
     
         super(options)
         
-        @@count += 1
+        
     end
 
     def has_side_mirors?
@@ -25,9 +25,9 @@ class LandVehicle < Vehicle
         @gear.type.nil? ? 'NA' : @gear.type
     end
 
-    def self.count
-        @@count
-    end
+    
+        
+    
 
     def info
         super

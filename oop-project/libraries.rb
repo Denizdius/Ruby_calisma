@@ -7,7 +7,9 @@
  "engine_cooling_system.rb",
  "land_vehicle.rb",
  "gear.rb",
- "side_mirors.rb"
+ "side_mirors.rb",
+ "sail.rb",
+ "sea_vehicle.rb"
 ].each do |lib|
     require_relative lib
 end

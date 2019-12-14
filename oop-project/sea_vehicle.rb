@@ -1,5 +1,5 @@
 class SeaVehicle < Vehicle
-    @@count = 0
+    
 
     def initialize(options = {})
         necessaries = {
@@ -12,18 +12,20 @@ class SeaVehicle < Vehicle
         }
 
         default.merge(options).merge!(necessaries)
+
+        @sail = Sail.new(count: options[:sail_count])
+
+
         super(options)
-
-        # set_sail(options[:sail])
+    end
+    def has_sail?
+        !@sail.count.zero?
     end
 
-    def self.count
-        @@count
-    end
-
+    
     def info
         super
-        puts "Sail: #{@sail.existence}"
+        puts "Sail Count: #{@sail.count}"
         puts "Vehicle Type: Sea"
         puts "---------------------------"
     end
