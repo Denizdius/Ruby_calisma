@@ -1,6 +1,4 @@
 class SeaVehicle < Vehicle
-    
-
     def initialize(options = {})
         necessaries = {
             wheels_count: 0,

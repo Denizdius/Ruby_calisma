@@ -26,16 +26,6 @@ class Vehicle
         @@count += 1
     end
     
-    # def initialize(wheels_count: 0, fuel: '', seats_count:0,acs_count:0,wheel_drive:'',engine_cooling_system:'')
-    #     set_wheels(wheels_count)
-    #     set_fuel(fuel)
-    #     set_seats(seats_count)
-    #     set_acs(acs_count)
-    #     set_wheel_drive(wheel_drive)
-    #     set_engine_cooling_system(engine_cooling_system)
-    #     @@count += 1
-    # end
-
     def has_wheels?
         !@wheels.nil?
     end
