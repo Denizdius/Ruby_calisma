@@ -2,7 +2,7 @@ class Air_Engine
     attr_reader :type
 
     def initialize(air_engine_type = '')
-        if valid_fuel_type?(air_engine_type)
+        if valid_air_engine_type?(air_engine_type)
             @type = air_engine_type.capitalize
         else
             air_engine_type == '' ? @type = nil : (raise InvalidAirEngineTypeError)
@@ -12,7 +12,7 @@ class Air_Engine
     private 
     
     def valid_air_engine_type?(type)
-        %w[jet_engine propeller_engine wind_based].include? type.downcase
+        %w[jet\ engine propeller\ engine wind\ based ].include? type.downcase
     end
 end
 

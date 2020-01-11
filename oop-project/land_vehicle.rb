@@ -1,5 +1,5 @@
 class LandVehicle < Vehicle
-    
+    attr_accessor :id_number
 
     def initialize(options = {})
         default = {
@@ -13,8 +13,6 @@ class LandVehicle < Vehicle
         @side_mirors = Side_Mirors.new(count: options[:side_mirors_count])
     
         super(options)
-        
-        
     end
 
     def has_side_mirors?

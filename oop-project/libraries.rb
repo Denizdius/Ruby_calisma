@@ -10,7 +10,10 @@
  "side_mirors.rb",
  "sail.rb",
  "sea_vehicle.rb",
- "gallery.rb"
+ "gallery.rb",
+ "air_engine.rb",
+ "air_vehicle.rb",
+ "wings.rb"
 ].each do |lib|
     require_relative lib
 end

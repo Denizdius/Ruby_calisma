@@ -1,20 +1,18 @@
 class AirVehicle < Vehicle
-    def initialize(options = {})
-        necessaries = {
-            wheel_drive: ''
-        }
+    attr_accessor :id_number
 
+    def initialize(options = {}) 
         default = {
-            fuel: "gas"
-            engine_cooling_system: "air"
-            wings:''
-            air_engine_type:''
+            fuel: "gas",
+            engine_cooling_system: "air",
+            wings_count: 0,
+            air_engine:''
         }
 
-        default.merge(options).merge!(necessaries)
+        options = default.merge(options)
 
-        @wings = Wings.new(count: options[:wings_count])
-        @air_engine_type = Air_Engine.new(options[:air_engine])
+        @wings = Wings.new(options[:wings_count])
+        @air_engine = Air_Engine.new(options[:air_engine])
 
 
         super(options)
@@ -30,7 +28,7 @@ class AirVehicle < Vehicle
     def info
         super
         puts "Wings Count: #{@wings.count}"
-        puts "Air_Engine: #{air_engine}"
+        puts "Air_Engine: #{@air_engine.type}"
         puts "Vehicle Type: Air"
         puts "---------------------------"
     end

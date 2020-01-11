@@ -1,10 +1,4 @@
 class Vehicle
-    @@count = 0
-
-    def self.count
-        @@count
-    end
-    
     def initialize(options = {})
         default = {
             wheels_count:           0,
@@ -23,7 +17,6 @@ class Vehicle
         set_acs(options[:acs_count])
         set_wheel_drive(options[:wheel_drive])
         set_engine_cooling_system(options[:engine_cooling_system])
-        @@count += 1
     end
     
     def has_wheels?
