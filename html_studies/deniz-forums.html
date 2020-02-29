@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+    	<meta charset="utf-8" />
+    	<title>ÜYELİK</title>
+    </head>
+  
+  	<body>
+
+
+        <h1> DENİZ BABA FORUM</h1>
+				
+	
+
+		<form action="#" method="GET" name="form1">
+		
+		<fieldset>
+			<legend>Kayıt Formu</legend> 
+				<div>
+					<label for="kullanici_adi">Kullanıcı Adı</label>
+						<input type="text" id="kullanici_adi" required autofocus>
+				</div>
+					<div>
+						<label for="sifre">Parola</label>
+							<input type="password" id="sifre" placeholder="En az 6 hane olmalıdır." required minlength="6">
+					</div>
+				<div>
+					<label for="cinsiyet">Cinsiyet</label>
+						<input type="radio" id="cinsiyet" name="cinsiyet" value="Erkek" required>Erkek
+						<input type="radio" id="cinsiyet" name="cinsiyet" value="Kadın" required>Kadın
+						<input type="radio" id="cinsiyet" name="cinsiyet" value="Belirtilmedi" required>Belirtilmedi
+				</div>
+				<div>
+					<label for="hobi">Hobileriniz</label>
+						<input type="checkbox" name="hobi" value="Bilgisayar">Bilgisayar 
+						<input type="checkbox" name="hobi" value="Kitap">Kitap 
+						<input type="checkbox" name="hobi" value="Basketbol">Basketbol 
+						<input type="checkbox" name="hobi" value="Futbol">Futbol 
+				</div>
+				<div>
+					<label for="tarih">Doğum Tarihiniz Gün/Ay/Yıl </label><br />
+				  <input type="Yıl_Gün_Ay" required autofocus> <br />
+				</div>
+				<div>
+					<label for="eposta">E-posta Adresiniz</label>
+						<input id="eposta" type="email" required autofocus>
+				</div>
+					
+				<div>
+					<label for="renk">Favori Renginiz</label>
+						<input type="color" id="renk">
+				</div>
+				<div>
+						<label for="Takım">Favori Takımınız</label>
+						<input id="takım" type="text" list="takımlar" />
+						<datalist id="takımlar">
+								<option value="BEŞİKTAŞ">
+								<option value="AlanyaSpor">
+								<option value="Galatasaray">
+								<option value="Fenerbahçe">
+								<option value="Real Madrid">
+								<option value="Barselona">
+								<option value="Bayern">
+								<option value="Chealsa">
+								<option value="Liverpool">
+								<option value="Man City">
+								<option value="Man United">
+								<option value="PSG">
+								<option value="Monaco">
+								<option value="Napoli">
+								<option value="Lyon">
+								<option value="Juventus">
+								<option value="Arsenal">
+								<option value="TrabzonSpor">
+								<option value="Sporting">
+								<option value="Ajax">
+								<option value="Lile">
+								
+					</div>
+				<div>
+					<label for="dosya">Resim yükleyin</label>
+						<input type="file" id="dosya">
+				</div>
+				<div>
+					<label for="resim">Image</label>
+						<input type="image" id="resim" src="http://lorempixel.com/60/50" onsubmit="submit-form();">
+				</div>
+			
+				<div>
+					<label for="tekno">Teknoloji Aşkınız</label>
+						<input type="range" id="tekno" min="1" max="10" step="10">
+				</div>
+
+
+				<label for="zeka">4.5-4=?</label>
+						<input type="radio" id="zeka" name="A" value="4" required>4
+						<input type="radio" id="zeka" name="A" value="16" required>16
+						<input type="radio" id="zeka" name="A" value="21" required>21
+
+			
+				
+				<div>
+					<label for="fikir">Fikirleriniz</label>
+						<textarea id="fikir" rows="5" cols="30"></textarea>
+				</div>
+				<div>
+					<label for="ulke">Hangi Ülkeden Katılıyorsunuz</label>
+					<input id="ulke" type="text" list="ulkeler" />
+					<datalist id="ulkeler">
+						    <option value="TÜRKİYE">
+						    <option value="Afganistan">
+						    <option value="Almanya">
+						    <option value="Nijerya">
+						    <option value="Tacikistan">
+						    <option value="Kırgızistan">
+						    <option value="Suriye">
+						    <option value="ABD">
+						    <option value="UK">
+						    <option value="Japonya">
+						    <option value="Zimbabwe">
+							<option value="Bulgaristan">
+							<option value="Fransa">
+						    <option value="Bükreş">
+							<option value="Belçika">
+							<option value="Avusturya">
+							<option value="Portekiz">
+							<option value="Rusya">
+							<option value="Çin">
+							<option value="İngiltere">
+							<option value="İsveç">
+							<option value="İsviçre">
+							<option value="Tunus">
+							<option value="Bae">
+							<option value="Mısır">
+							<option value=" Suudi Arabistan">
+							<option value="Kıbrıs">
+							<option value="Moğolistan">
+							<option value="Tayvan">
+							<option value="Singapur">
+							<option value="Ukrayna">
+							<option value="Arjantin">
+							<option value="Polonya">
+							<option value="Brezilya">
+							<option value="Şili">
+							<option value="Uruguay">
+							<option value="Paraguay">
+							<option value="Kanada">
+							<option value="Norveç">
+							<option value="İtalya">
+							<option value="İspanya">
+							<option value="Yunanistan">
+							<option value="Makedonya">
+							<option value="Arnavutluk">
+							<option value="Kosova">
+							<option value="Moldova">
+							<option value="Sırbistan">
+							<option value="Papua Yeni Gine">
+							<option value="Yeni Zelanda">
+							<option value="Hırvatistan">
+							<option value="Macaristan">
+							<option value="Bosna">
+							<option value="Romanya">
+							<option value="Venezuela">
+							<option value="Vietnam">
+							<option value="Kolombiya">
+							<option value="Küba">
+							<option value="Meksika">
+							<option value="Finlandiya">
+							<option value="Danimarka">
+							<option value="Hollanda">
+							<option value="İskoçya">
+							<option value="Galler">
+							<option value="İrlanda">
+							<option value="Hindistan">
+							<option value="İran">
+							<option value="Irak">
+						 </datalist>
+			
+					
+				</div>
+
+				<div>
+					<label for="uyruk">Uyruğunuz</label>
+					<input id="uyruk" type="text" list="ulkeler" />
+						 <datalist id="ulkeler">
+						    <option value="TÜRKİYE">
+						    <option value="Afganistan">
+						    <option value="Almanya">
+						    <option value="Nijerya">
+						    <option value="Tacikistan">
+						    <option value="Kırgızistan">
+						    <option value="Suriye">
+						    <option value="ABD">
+						    <option value="UK">
+						    <option value="Japonya">
+						    <option value="Zimbabwe">
+							<option value="Bulgaristan">
+							<option value="Fransa">
+						    <option value="Bükreş">
+							<option value="Belçika">
+							<option value="Avusturya">
+							<option value="Portekiz">
+							<option value="Rusya">
+							<option value="Çin">
+							<option value="İngiltere">
+							<option value="İsveç">
+							<option value="İsviçre">
+							<option value="Tunus">
+							<option value="Bae">
+							<option value="Mısır">
+							<option value=" Suudi Arabistan">
+							<option value="Kıbrıs">
+							<option value="Moğolistan">
+							<option value="Tayvan">
+							<option value="Singapur">
+							<option value="Ukrayna">
+							<option value="Arjantin">
+							<option value="Polonya">
+							<option value="Brezilya">
+							<option value="Şili">
+							<option value="Uruguay">
+							<option value="Paraguay">
+							<option value="Kanada">
+							<option value="Norveç">
+							<option value="İtalya">
+							<option value="İspanya">
+							<option value="Yunanistan">
+							<option value="Makedonya">
+							<option value="Arnavutluk">
+							<option value="Kosova">
+							<option value="Moldova">
+							<option value="Sırbistan">
+							<option value="Papua Yeni Gine">
+							<option value="Yeni Zelanda">
+							<option value="Hırvatistan">
+							<option value="Macaristan">
+							<option value="Bosna">
+							<option value="Romanya">
+							<option value="Venezuela">
+							<option value="Vietnam">
+							<option value="Kolombiya">
+							<option value="Küba">
+							<option value="Meksika">
+							<option value="Finlandiya">
+							<option value="Danimarka">
+							<option value="Hollanda">
+							<option value="İskoçya">
+							<option value="Galler">
+							<option value="İrlanda">
+							<option value="Hindistan">
+							<option value="İran">
+							<option value="Irak">
+						 </datalist>
+
+				<div>
+					<input name="kayit" type="submit" value="Kaydı Tamamla">
+					<input name="reset" type="reset" value="Formu Temizle">
+				</div>
+		</fieldset>
+		</form>
+    
+	</body>
+</html>	
