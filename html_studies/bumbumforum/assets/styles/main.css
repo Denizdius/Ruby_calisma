@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  margin-top: -25px;
+  padding: 0;
+  font-size: 24px;
+}
+
+
+div#header {
+    background: #660000;
+    color: #fff;
+    width: 100%;
+    height: 155px;
+}
+
+h1 {
+    /* font-family: 'Noto Serif', serif; */
+    text-align: center;    
+    margin: .5em 0 .2em 0;
+}
+
+h1 > span {
+    color: orange;
+}
+
+h2 {
+    font-size: .8em;
+    text-align: center;
+}
+
+#menu {
+    display: block;
+    padding: 0;
+    width: 960px;
+    margin: 0 auto;
+}
+
+#menu > li {
+    display: inline-block;
+    width: 175px;
+    background-color: transparent;
+    
+    text-align: center;
+    float: left;
+}
+
+
+#menu > li{
+    margin: 0;
+    padding: 0;
+}
+
+#menu > li > a {
+    display: block;
+    padding: 15px 5px 8px;
+    border: 1px solid #369;
+    border-bottom: 0px;
+    background-color: lightblue;
+}
+
+#menu > li > a:link, #menu > li > a:visited {
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: .8em;
+    text-decoration: none;
+}
+
+#menu > li > a:hover {
+    background-color: coral;
+    color: whitesmoke;
+}
+
+#site_icerik {
+    float: left;
+}
+
+#menu > li:first-child > a {
+    border-top-left-radius: 10px;
+}
+
+#menu > li:last-child > a {
+    border-top-right-radius: 10px;
+}
+
